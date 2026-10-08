@@ -1,0 +1,20 @@
+Photo credits
+=============
+All photos are from Unsplash (https://unsplash.com) and used under the Unsplash
+License (free to use, including commercially). Credit is given anyway.
+
+Each section has two files: <name>.jpg (banner) and <name>-sm.jpg (tile).
+
+hero.jpg           phil sheldon ABIPP    https://unsplash.com/photos/iml76LeNugM
+te-ngrohta         Matthias Thijsen      https://unsplash.com/photos/sjQEsvk96h0
+hot-chocolate      Kate K                https://unsplash.com/photos/dpup2dNvEvM
+cold-drinks        Nguyen Tong Hai Van   https://unsplash.com/photos/Q1ImlWMxOIM
+mocktails          Anil Sharma           https://unsplash.com/photos/OR7-I3crGbQ
+fresh-juice        Mateusz Feliksik      https://unsplash.com/photos/TmOGarNOGFs
+freskuese          Jack Baxter           https://unsplash.com/photos/z1XpeP0Yi_8
+crepes             Michael Moloney       https://unsplash.com/photos/d8b4yr2kVFI
+crepes-salty       Gennady Zakharin      https://unsplash.com/photos/2-K6pHMT530
+piadina            Igor Bakbardin        https://unsplash.com/photos/XZ_j44s-AsE
+snacks             Pixzolo Photography   https://unsplash.com/photos/BiWb1Y8wpZk
+desserts           Julie MARTINS         https://unsplash.com/photos/9_JzprubLOs
+add-on             Serghey Savchuk       https://unsplash.com/photos/VctkjZHOqlo

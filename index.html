@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A3 Corner Coffee Shop · Menu</title>
+<meta name="description" content="Menuja e A3 Corner Coffee Shop: kafe, crepes, piadina, snacks, pije dhe ëmbëlsira.">
+<meta name="theme-color" content="#0d0b09">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A3 Corner Coffee Shop · Menu">
+<meta property="og:description" content="Kafe, crepes, piadina, snacks, pije dhe ëmbëlsira.">
+<meta property="og:image" content="https://andis382.github.io/a3-corner/images/hero.jpg">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="1015">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0b09'/%3E%3Cg transform='rotate(35 32 32)'%3E%3Cellipse cx='32' cy='32' rx='13' ry='20' fill='%23d9ab6b'/%3E%3Cpath d='M32 13c-6 8 6 11 0 19s6 11 0 19' fill='none' stroke='%230d0b09' stroke-width='3' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #0d0b09;
+  --surface: #17130f;
+  --text: #f5efe6;
+  --muted: #bfb3a3;
+  --gold: #d9ab6b;
+  --gold-soft: #f1d6a8;
+  --line: rgba(217, 171, 107, .18);
+  --line-2: rgba(217, 171, 107, .4);
+  --script: "Kaushan Script", "Brush Script MT", "Segoe Script", Georgia, serif;
+  --sans: "Karla", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r: 18px;
+  --gutter: 16px;
+  --max: 760px;
+  --bar: 64px;
+  --ease: cubic-bezier(.22, .8, .24, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--bar) + 12px);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1rem/1.5 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.vh {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.skip {
+  position: fixed; left: 12px; top: -64px; z-index: 100;
+  padding: 10px 16px; border-radius: 10px;
+  background: var(--gold); color: #1b1107; font-weight: 700;
+  transition: top .2s;
+}
+.skip:focus { top: 12px; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: clamp(284px, 52vw, 400px);
+  padding: calc(env(safe-area-inset-top) + 36px) var(--gutter) 72px;
+  text-align: center;
+  overflow: hidden;
+  background: #120e0b;
+}
+.hero > img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(.95) brightness(.7);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(120% 90% at 50% 38%, rgba(13, 11, 9, .1), rgba(13, 11, 9, .68) 100%),
+    linear-gradient(180deg, rgba(13, 11, 9, .5) 0%, rgba(13, 11, 9, .15) 36%, rgba(13, 11, 9, .86) 80%, var(--bg) 100%);
+}
+.orn { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--gold); }
+.orn i { display: block; width: clamp(44px, 14vw, 84px); height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.orn i:last-child { transform: scaleX(-1); }
+.bean { width: 28px; height: 28px; }
+.bean .crease { stroke: #17120d; }
+.brand {
+  margin: 12px 0 0;
+  font: 400 clamp(3.3rem, 15.5vw, 4.9rem)/1.02 var(--script);
+  color: var(--gold-soft);
+  text-shadow: 0 2px 30px rgba(217, 171, 107, .38), 0 1px 3px rgba(0, 0, 0, .6);
+}
+.brand-sub {
+  display: block;
+  margin-top: 12px;
+  padding-left: .46em;
+  font: 600 .8rem/1 var(--sans);
+  letter-spacing: .46em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 230, .92);
+  text-shadow: none;
+}
+
+/* ---------- Search ---------- */
+.search { position: relative; z-index: 3; margin-top: -30px; }
+.search input {
+  width: 100%; height: 56px;
+  padding: 0 54px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: rgba(23, 19, 15, .95);
+  color: var(--text);
+  font: 500 1rem var(--sans);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .5);
+  -webkit-appearance: none; appearance: none;
+}
+.search input::placeholder { color: #a79b8b; opacity: 1; }
+.search input::-webkit-search-cancel-button { display: none; }
+.search input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(217, 171, 107, .25), 0 14px 40px rgba(0, 0, 0, .5); }
+.search .ic { position: absolute; left: 19px; top: 50%; transform: translateY(-50%); color: var(--gold); pointer-events: none; }
+.search .clear {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border: 0; border-radius: 50%;
+  background: transparent; color: var(--muted); cursor: pointer;
+}
+
+/* ---------- Category tiles ---------- */
+.cats { padding-top: 22px; }
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 560px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; } }
+.tile {
+  position: relative; isolation: isolate;
+  display: block;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: linear-gradient(140deg, #2a2018, #17130f);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform .25s var(--ease), border-color .25s;
+}
+.tile img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--ease);
+}
+.tile::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg, rgba(10, 8, 6, .92) 0%, rgba(10, 8, 6, .5) 42%, rgba(10, 8, 6, .06) 78%);
+}
+.tile-body { position: absolute; left: 14px; right: 14px; bottom: 12px; }
+.tile-t { display: block; font: 400 clamp(1.35rem, 6.4vw, 1.7rem)/1.05 var(--script); text-shadow: 0 2px 14px rgba(0, 0, 0, .75); }
+.tile-s { display: block; margin-top: 6px; font: 700 .68rem/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.tile:active { transform: scale(.975); }
+@media (hover: hover) {
+  .tile:hover { border-color: var(--line-2); }
+  .tile:hover img { transform: scale(1.07); }
+}
+
+/* ---------- Sections ---------- */
+#sections { display: grid; gap: 34px; padding-top: 34px; }
+.sec-head {
+  position: relative; isolation: isolate;
+  height: clamp(132px, 36vw, 196px);
+  overflow: hidden;
+  border: 1px solid var(--line); border-bottom: 0;
+  border-radius: var(--r) var(--r) 0 0;
+  background: linear-gradient(140deg, #2a2018, #17130f);
+}
+.sec-head img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.sec-head::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg, rgba(10, 8, 6, .95) 0%, rgba(10, 8, 6, .55) 46%, rgba(10, 8, 6, .1) 100%);
+}
+.sec-title { position: absolute; left: 20px; right: 20px; bottom: 14px; margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.sec-title .t { font: 400 clamp(2.1rem, 9vw, 2.8rem)/1 var(--script); text-shadow: 0 2px 18px rgba(0, 0, 0, .7); }
+.sec-title .s { font: 700 .74rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+
+.items {
+  list-style: none; margin: 0; padding: 8px 0 10px;
+  border: 1px solid var(--line); border-top: 0;
+  border-radius: 0 0 var(--r) var(--r);
+  background: var(--surface);
+}
+.item { padding: 13px 20px; }
+.item + .item { border-top: 1px solid rgba(255, 255, 255, .045); }
+.row { display: flex; align-items: baseline; gap: 10px; }
+.name { font-size: 1.0625rem; font-weight: 500; line-height: 1.3; }
+.dots { flex: 1 1 24px; min-width: 18px; border-bottom: 1px dotted rgba(217, 171, 107, .4); transform: translateY(-.3em); }
+.price { font-size: 1.0625rem; font-weight: 700; letter-spacing: .01em; color: var(--gold); font-variant-numeric: tabular-nums; }
+.desc { margin: 3px 0 0; padding-right: 24px; font-size: .875rem; line-height: 1.45; color: var(--muted); }
+
+.status { margin: 18px 2px 0; font-size: .9rem; color: var(--muted); }
+.status:empty { margin: 0; }
+.empty { padding: 56px 16px; text-align: center; color: var(--muted); }
+.empty b { display: block; margin-bottom: 8px; font: 400 1.9rem/1.1 var(--script); color: var(--text); }
+
+body.searching .cats, body.searching .topbar { display: none; }
+body.searching #sections { gap: 18px; padding-top: 20px; }
+body.searching .sec-head { height: 86px; }
+body.searching .sec-title .t { font-size: 1.9rem; }
+
+/* ---------- Sticky category bar ---------- */
+.topbar {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  height: calc(var(--bar) + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  background: rgba(13, 11, 9, .94);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transform: translateY(-110%);
+  visibility: hidden;
+  transition: transform .3s var(--ease), visibility 0s .3s;
+}
+body.bar-on .topbar { transform: none; visibility: visible; transition: transform .3s var(--ease), visibility 0s; }
+.topbar-in { display: flex; align-items: center; gap: 6px; height: var(--bar); max-width: calc(var(--max) + 16px); margin-inline: auto; padding-inline: 8px; }
+.iconbtn {
+  flex: none; display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line); border-radius: 50%;
+  background: transparent; color: var(--gold); cursor: pointer;
+  touch-action: manipulation;
+}
+.chips {
+  position: relative; flex: 1; min-width: 0;
+  display: flex; gap: 8px; padding: 0 28px 0 14px;
+  overflow-x: auto; scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 22px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 22px), transparent 100%);
+}
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; display: inline-flex; align-items: center;
+  height: 44px; padding: 0 16px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted); font: 600 .9rem/1 var(--sans); white-space: nowrap;
+  touch-action: manipulation;
+}
+.chip[aria-current="true"] { background: var(--gold); border-color: var(--gold); color: #1b1107; }
+
+/* ---------- Footer ---------- */
+.foot {
+  margin-top: 56px;
+  padding: 46px 0 calc(40px + env(safe-area-inset-bottom));
+  text-align: center;
+  border-top: 1px solid var(--line);
+  background: radial-gradient(80% 120% at 50% 0%, rgba(217, 171, 107, .09), transparent 70%);
+}
+.signoff { margin: 0 0 28px; font: 400 clamp(2.3rem, 10.5vw, 3.1rem)/1.1 var(--script); color: var(--gold-soft); }
+.boasi { max-width: 520px; margin: 0 auto 28px; padding: 24px 22px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+.boasi h2 { margin: 0; font: 700 .76rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+.boasi .k { margin: 10px 0 12px; font: 400 1.6rem/1.1 var(--script); }
+.boasi p:last-child { margin: 0; font-size: .9rem; line-height: 1.65; color: var(--muted); }
+.social { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0 0 24px; padding: 0; }
+.social a { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 20px; border: 1px solid var(--line-2); border-radius: 999px; font-weight: 600; }
+.social svg { color: var(--gold); }
+.credit { margin: 0; font-size: .78rem; color: var(--muted); }
+.credit a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .tile { animation: rise .6s var(--ease) backwards; animation-delay: calc(var(--i, 0) * 45ms); }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to the menu</a>
+
+<nav class="topbar" id="topbar" aria-label="Menu categories">
+  <div class="topbar-in">
+    <button class="iconbtn" type="button" id="toTop" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+    <div class="chips" id="chips"></div>
+    <button class="iconbtn" type="button" id="toSearch" aria-label="Search the menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-3.8-3.8"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="images/hero.jpg" alt="" width="1400" height="1015" fetchpriority="high" decoding="async" onerror="this.remove()">
+  <div>
+    <div class="orn" aria-hidden="true">
+      <i></i>
+      <svg class="bean" viewBox="0 0 24 24"><g transform="rotate(35 12 12)"><ellipse cx="12" cy="12" rx="6" ry="9.6" fill="currentColor"/><path class="crease" d="M12 3.2c-3.6 3.6 3.6 5.4 0 8.8s3.6 5.2 0 8.8" fill="none" stroke-width="1.5" stroke-linecap="round"/></g></svg>
+      <i></i>
+    </div>
+    <h1 class="brand">A3 Corner <span class="brand-sub">Coffee Shop</span></h1>
+  </div>
+</header>
+
+<main id="menu">
+  <div class="wrap">
+    <form class="search" id="searchForm" role="search" autocomplete="off">
+      <label class="vh" for="q">Search the menu</label>
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="q" type="search" inputmode="search" enterkeyhint="search" placeholder="Search · Kërko në menu" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button class="clear" type="button" id="qclear" aria-label="Clear search" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </form>
+
+    <section class="cats" id="cats" aria-labelledby="cats-h">
+      <h2 class="vh" id="cats-h">Categories</h2>
+      <ul class="tiles" id="tiles" role="list"></ul>
+    </section>
+
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <div id="sections"></div>
+    <div class="empty" id="empty" hidden>
+      <b>Nuk u gjet · Not found</b>
+      <span>Nothing matches “<span id="emptyQ"></span>”. Try another word.</span>
+    </div>
+    <noscript><p class="empty">Please turn on JavaScript to see the menu.</p></noscript>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="signoff">Ju bëftë mirë!</p>
+    <section class="boasi" aria-labelledby="boasi-h">
+      <h2 id="boasi-h">Caffe Boasi</h2>
+      <p class="k">The art of roasting</p>
+      <p>The port of Genoa has always been an important point for the collection and distribution of the top world caffe production; this is why Genoa is the site of a “school” of specialists in coffee roasting.</p>
+    </section>
+    <ul class="social" id="social"></ul>
+    <p class="credit">Photos from <a href="https://unsplash.com/?utm_source=a3corner_menu&amp;utm_medium=referral" rel="noopener">Unsplash</a></p>
+  </div>
+</footer>
+
+<script>
+/*
+  A3 Corner menu
+  ──────────────
+  To change a price or an item, edit the MENU list below. Each item is
+  [ 'Name', price ]  or  [ 'Name', price, 'small ingredients line' ].
+  Sections show up on the page in the order they appear here.
+  Photos live in images/. For the section with id "crepes", the banner is
+  images/crepes.jpg (about 900px wide) and the tile is images/crepes-sm.jpg
+  (about 480px wide). Replace a file, keeping its name, to change a photo.
+  Photo credits are in images/CREDITS.txt.
+*/
+(() => {
+  'use strict';
+
+  const SOCIAL = {
+    instagram: 'https://www.instagram.com/a3corner/',
+    facebook: '' // paste the Facebook page link here to show the button
+  };
+
+  const img = name => `images/${name}.jpg`;
+
+  const MENU = [
+    { id: 'te-ngrohta', title: 'Të ngrohta', sub: 'Hot drinks', items: [
+      ['Espresso/macchiato', 90],
+      ['Espresso doppio', 170],
+      ['Americano', 170],
+      ['Latte machiato', 170],
+      ['Cappucchino', 170],
+      ['Marocchino', 220],
+      ['Cacao', 170],
+      ['Salep', 170],
+      ['Çaj bio', 120]
+    ]},
+    { id: 'hot-chocolate', title: 'Hot chocolate', items: [
+      ['Classic', 170],
+      ['Pane', 200],
+      ['Luleshtrylle', 220],
+      ['Banane', 220],
+      ['Fruta të thata', 300]
+    ]},
+    { id: 'cold-drinks', title: 'Cold drinks', items: [
+      ['Smoothie', 300],
+      ['Milkshake', 280],
+      ['Diet smoothie', 330],
+      ['Frappe', 200],
+      ['Iced coffee', 200],
+      ['Cold cappucchino', 250],
+      ['Cold choco', 250],
+      ['Cold cacao', 250],
+      ['Lëng trëndafili bio', 150],
+      ['Freddoccino', 250],
+      ['Iced mocha', 250],
+      ['Frappucchino', 250],
+      ['Matcha latte', 300]
+    ]},
+    { id: 'mocktails', title: 'Mocktail’s', items: [
+      ['Passion fruit', 400, 'Passion fruit pure, lime, portokall i kuq'],
+      ['Honey ginger', 400, 'Mjalte, ginger, pure boronice'],
+      ['Amazone', 400, 'Shege, pure banane, portokall i kuq']
+    ]},
+    { id: 'fresh-juice', title: 'Fresh juice', items: [
+      ['Portokall', 250],
+      ['Mix', 300]
+    ]},
+    { id: 'freskuese', title: 'Freskuese', sub: 'Soft drinks', items: [
+      ['Coca Cola', 150],
+      ['Fanta', 150],
+      ['Çaj i ftohte', 200],
+      ['B52', 200],
+      ['Schweppes', 150],
+      ['Bravo', 150],
+      ['Red Bull', 300],
+      ['Biter', 100],
+      ['Uje', 100]
+    ]},
+    { id: 'crepes', title: 'Crepes', sub: 'Sweet', label: 'Crepes (sweet)', items: [
+      ['Simple', 200],
+      ['Nutella', 250],
+      ['Çokollate banane', 300],
+      ['Çokollate luleshtrylle', 300],
+      ['Nutella banane', 350],
+      ['Nutella luleshtrylle', 350],
+      ['Nutella fruta thata', 370],
+      ['A3', 370],
+      ['Oreo', 350],
+      ['Red triangle', 370],
+      ['Mix', 370],
+      ['Cocoa 1', 320],
+      ['Cocoa 2', 270],
+      ['Red velvet', 400],
+      ['Tahin crepe', 400],
+      ['Tropical crepe', 400],
+      ['Pistacchio crepe', 350],
+      ['Lotus crepe', 350]
+    ]},
+    { id: 'crepes-salty', title: 'Crepes', sub: 'Salty', label: 'Crepes (salty)', items: [
+      ['Rucola grana', 300, 'Rukola, grana padana, aceto, philadelphia'],
+      ['Proshute', 350, 'Rukola, domate, proshutë, gouda, aceto, philadelphia'],
+      ['Meksicana', 350, 'Rukola, miser, spec pikant, sweet chili, suxhuk pikant, gouda, aceto balsamike, philadelphia'],
+      ['Perime', 300, 'Sallate, gouda, perime zgare, aceto, philadelphia'],
+      ['A3 fileto pule', 350, 'Sallate, fileto pule, salce çezar, domate, gouda, philadelphia'],
+      ['Capriccio', 350, 'Proshute viçi, proshute e zezë, gouda, ullinj, kërpudhë, philadelphia'],
+      ['Me rrepe', 400, 'Panxhar, philadelphia, rukola, proshutë e zezë, salce çezar, ullinj, kerpudhe, speca'],
+      ['4 cheeses', 350, 'Gouda, i bardhë, gorgonzola, grana padana, philadelphia']
+    ]},
+    { id: 'piadina', title: 'Piadina', items: [
+      ['Vegjetariane', 300, 'Salce kosi, perime zgare, rukola, gouda, açeto balsamike'],
+      ['Proshutë', 350, 'Salce kosi, kastravec, speca, domate, proshute e thate viçi, rukola, gouda, açeto balsamike'],
+      ['Meksicana', 350, 'Krem djathi, gorgonzola, miser, kastravec turshi, sallate, sweet chili, suxhuk pikant, gouda, gorgonzola'],
+      ['Fileto pule', 350, 'Salce kosi, salce çezar, sallate, kastravec, domate, miser, fileto pule, gouda'],
+      ['A3', 400, 'Philadelphia, avokado, misër, vezë, rukola, domate, aceto balsamik, gouda, proshutë e zezë']
+    ]},
+    { id: 'snacks', title: 'Snacks', items: [
+      ['Classic toast', 250, 'Salce kosi, domate, mortadele viçi, gouda'],
+      ['Toast 3 cheesses', 300, 'Gorgonzola, gouda, grana'],
+      ['Avocado toast', 450, 'Avokado e marinuar, djath i bardhe, pomodorini, veze, fara chia, açeto balsamike'],
+      ['Patate', 200],
+      ['Club sandwich', 450]
+    ]},
+    { id: 'desserts', title: 'Desserts', items: [
+      ['Brioche cokollate / krem', 120],
+      ['Yoghurt me fruta', 400],
+      ['Ëmbëlsira të javës', 350]
+    ]},
+    { id: 'add-on', title: 'Add on', items: [
+      ['Pane', 50],
+      ['Çokollate / nutella', 80],
+      ['Fruta te thata mix', 150],
+      ['Fruta pylli', 150],
+      ['Banane', 70],
+      ['Luleshtrylle', 70]
+    ]}
+  ];
+
+  // ---------- helpers ----------
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // lower-case and drop accents so "cokollate" finds "Çokollate"
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- render ----------
+  const tileHTML = (c, i) => `
+    <li><a class="tile" href="#${c.id}" style="--i:${i}" data-i="${i}">
+      <img src="${img(c.id + '-sm')}" alt="" width="480" height="320" ${i < 6 ? '' : 'loading="lazy"'} decoding="async" onerror="this.remove()">
+      <span class="tile-body"><span class="tile-t">${esc(c.title)}</span>${c.sub ? ` <span class="tile-s">${esc(c.sub)}</span>` : ''}</span>
+    </a></li>`;
+
+  const itemHTML = (c, [name, price, desc]) => `
+    <li class="item" data-q="${esc(norm([name, desc || '', c.title, c.sub || ''].join(' ')))}">
+      <div class="row"><span class="name">${esc(name)}</span><span class="dots" aria-hidden="true"></span><span class="price">${price}</span></div>
+      ${desc ? `<p class="desc">${esc(desc)}</p>` : ''}
+    </li>`;
+
+  const sectionHTML = c => `
+    <section class="sec" id="${c.id}" aria-labelledby="h-${c.id}">
+      <header class="sec-head">
+        <img src="${img(c.id)}" alt="" width="900" height="600" loading="lazy" decoding="async" onerror="this.remove()">
+        <h2 class="sec-title" id="h-${c.id}"><span class="t">${esc(c.title)}</span>${c.sub ? ` <span class="s">${esc(c.sub)}</span>` : ''}</h2>
+      </header>
+      <ul class="items" role="list">${c.items.map(it => itemHTML(c, it)).join('')}</ul>
+    </section>`;
+
+  $('#tiles').innerHTML = MENU.map(tileHTML).join('');
+  $('#sections').innerHTML = MENU.map(sectionHTML).join('');
+  $('#chips').innerHTML = MENU.map((c, i) => `<a class="chip" href="#${c.id}" data-i="${i}">${esc(c.label || c.title)}</a>`).join('');
+
+  const icons = {
+    instagram: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor" stroke="none"/></svg>',
+    facebook: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 4.5h-1.6a3.4 3.4 0 0 0-3.4 3.4V21M8 12.5h7.5"/></svg>'
+  };
+  const socialLinks = [['instagram', 'Instagram', 'a3corner'], ['facebook', 'Facebook', 'A3 Corner']].filter(([k]) => SOCIAL[k]);
+  $('#social').innerHTML = socialLinks.map(([k, name, handle]) =>
+    `<li><a href="${esc(SOCIAL[k])}" target="_blank" rel="noopener" aria-label="${name}: ${handle}">${icons[k]}<span>${handle}</span></a></li>`).join('');
+  if (!socialLinks.length) $('#social').remove();
+
+  // ---------- search ----------
+  const input = $('#q'), clearBtn = $('#qclear'), status = $('#status'), empty = $('#empty');
+  const sections = MENU.map(c => {
+    const el = document.getElementById(c.id);
+    return { el, items: [...el.querySelectorAll('.item')] };
+  });
+
+  function search() {
+    const raw = input.value.trim();
+    const terms = norm(raw).split(/\s+/).filter(Boolean);
+    document.body.classList.toggle('searching', terms.length > 0);
+    clearBtn.hidden = !input.value;
+    let total = 0;
+    sections.forEach(({ el, items }) => {
+      let hits = 0;
+      items.forEach(li => {
+        const hit = terms.every(t => li.dataset.q.includes(t));
+        li.hidden = !hit;
+        if (hit) hits++;
+      });
+      el.hidden = terms.length > 0 && hits === 0;
+      total += hits;
+    });
+    if (!terms.length) { status.textContent = ''; empty.hidden = true; onScroll(); return; }
+    status.textContent = total ? `${total} ${total === 1 ? 'result' : 'results'}` : '';
+    $('#emptyQ').textContent = raw;
+    empty.hidden = total > 0;
+  }
+  input.addEventListener('input', search);
+  input.addEventListener('keydown', e => { if (e.key === 'Escape') { input.value = ''; search(); } });
+  $('#searchForm').addEventListener('submit', e => { e.preventDefault(); input.blur(); });
+  clearBtn.addEventListener('click', () => { input.value = ''; search(); input.focus(); });
+
+  // ---------- sticky bar + active category ----------
+  const cats = $('#cats'), chipBox = $('#chips');
+  const chips = [...chipBox.children];
+  let current = -1, locked = false, lockTimer = 0, ticking = false;
+
+  function setActive(i) {
+    if (i === current) return;
+    current = i;
+    chips.forEach((c, k) => k === i ? c.setAttribute('aria-current', 'true') : c.removeAttribute('aria-current'));
+    const c = chips[i];
+    chipBox.scrollTo({ left: c.offsetLeft - (chipBox.clientWidth - c.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+
+  function onScroll() {
+    ticking = false;
+    const searching = document.body.classList.contains('searching');
+    // the bar appears once the first section reaches the top, and stays while a jump is in progress
+    const show = !searching && (locked || sections[0].el.getBoundingClientRect().top < 120);
+    document.body.classList.toggle('bar-on', show);
+    if (!show) { current = -1; return; }
+    if (locked) return;
+    const atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - 4;
+    let idx = 0;
+    sections.forEach(({ el }, i) => { if (el.getBoundingClientRect().top <= 100) idx = i; });
+    setActive(atEnd ? sections.length - 1 : idx);
+  }
+
+  addEventListener('scroll', () => {
+    clearTimeout(lockTimer);
+    lockTimer = setTimeout(() => { locked = false; onScroll(); }, 140);
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+
+  // Jump to a section from a tile or chip. The link in the address bar is updated with replaceState,
+  // so sharing it works but "Back" still leaves the menu instead of stepping through every tap.
+  document.addEventListener('click', e => {
+    const a = e.target.closest('.tile, .chip');
+    if (!a || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    const c = MENU[+a.dataset.i];
+    locked = true; // highlight the target now instead of flickering through the sections in between
+    clearTimeout(lockTimer);
+    lockTimer = setTimeout(() => { locked = false; onScroll(); }, 1500); // in case the page does not move
+    document.body.classList.add('bar-on');
+    setActive(+a.dataset.i);
+    history.replaceState(null, '', '#' + c.id);
+    document.getElementById(c.id).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  $('#toTop').addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+  $('#toSearch').addEventListener('click', () => {
+    scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    setTimeout(() => input.focus({ preventScroll: true }), reduceMotion ? 0 : 350);
+  });
+
+  // open straight at a section when the link has one (e.g. …/#crepes)
+  let target = null;
+  try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (e) { /* malformed hash */ }
+  if (target) {
+    const go = () => target.scrollIntoView({ behavior: 'instant' });
+    requestAnimationFrame(go);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+  }
+  onScroll();
+})();
+</script>
+</body>
+</html>
